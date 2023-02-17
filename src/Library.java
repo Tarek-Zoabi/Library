@@ -72,8 +72,10 @@ public class Library {
 
                 workers.add(ToAdd);
                 System.out.println("worker added successfully");
-            }
-            else{
+            } else if (m instanceof Adminstrator && this.isWorkinghere(m)) {
+                workers.add(ToAdd);
+                System.out.println("worker added successfully");
+            } else{
                 System.out.println("Cannot add admin with manager privilege");
             }
         }

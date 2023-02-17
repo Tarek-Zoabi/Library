@@ -5,6 +5,9 @@ public class Book {
     private int yearOfpup;
     private int numOfPages;
 
+    private int price;
+
+
     public Book(int bookCode, String title, String writer, int yearOfpup, int numOfPages) {
         this.bookCode = bookCode;
         this.title = title;
@@ -54,6 +57,15 @@ public class Book {
     public void setNumOfPages(int numOfPages) {
         this.numOfPages = numOfPages;
     }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     public boolean isEqual(Book b){
         if (bookCode==b.bookCode && this.title==b.title && this.writer==b.writer && this.yearOfpup==b.yearOfpup && this.numOfPages==b.numOfPages)
             return true;
