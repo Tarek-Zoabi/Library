@@ -1,14 +1,14 @@
 public class Book {
-    private int bookCode;
+    private String bookCode;
     private String title;
     private String writer;
     private int yearOfpup;
     private int numOfPages;
 
     private int price;
+    private int amount=1;
 
-
-    public Book(int bookCode, String title, String writer, int yearOfpup, int numOfPages) {
+    public Book(String bookCode, String title, String writer, int yearOfpup, int numOfPages) {
         this.bookCode = bookCode;
         this.title = title;
         this.writer = writer;
@@ -18,11 +18,11 @@ public class Book {
 
 
 
-    public int getBookCode() {
+    public String getBookCode() {
         return bookCode;
     }
 
-    public void setBookCode(int bookCode) {
+    public void setBookCode(String bookCode) {
         this.bookCode = bookCode;
     }
 
@@ -55,7 +55,15 @@ public class Book {
     }
 
     public void setNumOfPages(int numOfPages) {
-        this.numOfPages = numOfPages;
+
+        if(numOfPages>0){
+            this.numOfPages = numOfPages;
+            System.out.println("Num of pages changes successfully");
+        }
+        else {
+            System.out.println("Cannot set a book with a zero or below num of pages");
+        }
+
     }
 
     public int getPrice() {
@@ -66,10 +74,22 @@ public class Book {
         this.price = price;
     }
 
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
     public boolean isEqual(Book b){
         if (bookCode==b.bookCode && this.title==b.title && this.writer==b.writer && this.yearOfpup==b.yearOfpup && this.numOfPages==b.numOfPages)
             return true;
         else return false;
+    }
+
+    public boolean compare(Book book) {
+        return this.getBookCode().equals(book.getBookCode());
     }
 
     @Override
